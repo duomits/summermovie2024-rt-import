@@ -8,7 +8,7 @@ def get_rotten_tomatoes_score(url):
     soup = BeautifulSoup(response.text, 'html.parser')
 
     # Pull critic score from RT HTML page
-    score_tag = soup.find('rt-button', slot='criticsScore').get_text(strip=True)
+    score_tag = soup.find('rt-text', slot='criticsScore').get_text(strip=True)
     if score_tag:
         score = score_tag #.get_text(strip=True)
         return score
